@@ -29,12 +29,11 @@ class Data:
         else:
             return "Data inválida."
 
-    def data_valida(self, dia, mes, ano):
+    def dataValida(self, dia, mes, ano):
         try:
             dia, mes, ano = int(dia), int(mes), int(ano)
         except ValueError:
             return False
-
         if 1 <= mes <= 12:
             dias_no_mes = self.dias_no_mes(mes, ano)
             if 1 <= dia <= dias_no_mes:
@@ -43,5 +42,5 @@ class Data:
                 if dia == 31 and mes in [4, 6, 9, 11]:
                     return False
                 return True
-
         return False
+
